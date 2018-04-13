@@ -2,7 +2,7 @@ import * as React from 'react';
 import Head       from 'next/head';
 
 export default () =>
-  <div>
+  <div className="about">
     <Head>
       <title>about</title>
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -10,6 +10,8 @@ export default () =>
     Welcome to about!
 
     <style jsx>{`
-      color: #fcc;
+      .about {
+        color: #ccf;
+      }
     `}</style>
   </div>
