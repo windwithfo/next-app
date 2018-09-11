@@ -1,13 +1,13 @@
 {
   "presets": [
+    "next/babel",
+    "@zeit/next-typescript/babel"
+  ],
+  "plugins": [
     [
-      "next/babel",
+      "styled-jsx/babel",
       {
-        "styled-jsx": {
-          "plugins": [
-            "styled-jsx-plugin-sass"
-          ]
-        }
+        "plugins": ["styled-jsx-plugin-sass"]
       }
     ]
   ]

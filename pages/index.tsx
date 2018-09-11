@@ -1,14 +1,14 @@
-import * as React from 'react';
-import Head       from 'next/head';
-import Link       from 'next/link';
 import '../static/style/common.scss';
 
-export default () => (
+import React from 'react';
+import Link  from 'next/link';
+import Nav   from '../components/nav';
+import Head  from '../components/head';
+
+const Home = () => (
   <div>
-    <Head>
-      <title>My page title</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
+    <Head title="Home" />
+    <Nav />
     <div className="title">
       Welcome to my next.js!
       <p className="tips">p</p>
@@ -28,4 +28,6 @@ export default () => (
       }
     `}</style>
   </div>
-)
+);
+
+export default Home;

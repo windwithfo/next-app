@@ -1,12 +1,11 @@
-import * as React from 'react';
-import Head       from 'next/head';
+import React from 'react';
+import Nav   from '../components/nav';
+import Head  from '../components/head';
 
-export default () =>
+const About = () => (
   <div className="about">
-    <Head>
-      <title>about</title>
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
+    <Head title="about"/>
+    <Nav/>
     Welcome to about!
 
     <style jsx>{`
@@ -15,3 +14,6 @@ export default () =>
       }
     `}</style>
   </div>
+)
+
+export default About;
