@@ -7,19 +7,20 @@ Usage Example
 ===
 Init
 
-    npm install
+    yarn
 
 Build
 
-    npm run build
+    yarn build
 
 Run develop
 
-    npm run dev
+    yarn dev
+    yarn dev -p [port]
 
 Run server online
 
-    npm start
+    yarn start
 
 License
 ===
