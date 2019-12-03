@@ -19,8 +19,6 @@ export class Store {
   @observable light = false
   @observable count = 0;
 
-
-
   add() {
     this.count++
   }

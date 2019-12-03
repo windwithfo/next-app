@@ -2,6 +2,10 @@ import React from 'react'
 import { inject, observer } from 'mobx-react';
 import { Store } from '../store'
 
+import {
+  Button,
+} from 'antd'
+
 interface IProps {
   store: Store
 }
@@ -18,7 +22,7 @@ class Test extends React.Component<IProps> {
     return (
       <div>
         count: {this.store.count}
-        <button onClick={this.add}>count++</button>
+        <Button onClick={this.add}>count++</Button>
       </div>
     )
   }
