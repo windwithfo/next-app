@@ -1,4 +1,4 @@
-next-koa
+next-app
 ===
 A template porject with next.js
 ***
