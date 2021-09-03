@@ -1,12 +1,13 @@
-import { observable } from 'mobx'
-import { useStaticRendering } from 'mobx-react'
+import { observable, makeObservable, configure, runInAction } from 'mobx'
+import { enableStaticRendering } from 'mobx-react'
 
-const isServer = typeof window === 'undefined'
 // eslint-disable-next-line react-hooks/rules-of-hooks
-useStaticRendering(isServer)
+enableStaticRendering(typeof window === 'undefined')
+configure({ enforceActions: 'always' })
 
 class ListStore {
   constructor(ctx?: any) {
+    makeObservable(this)
     if (ctx.list && ctx.list.length > 0) {
       this.list = ctx.list
     }
@@ -19,6 +20,22 @@ class ListStore {
     name: 'name2',
     age: 12
   }]
+
+  async getData() {
+    const obj = await new Promise<any>((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          name: 'dks',
+          age: 11
+        })
+      }, 1000)
+    })
+    
+    runInAction(() => {
+      // this.list = [obj, ...this.list]
+      this.list.push(obj)
+    })
+  }
 }
 
 export default ListStore

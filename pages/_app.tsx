@@ -1,38 +1,16 @@
-import App from 'next/app'
-import React from 'react'
-import { fetchInitialStoreState, Store } from '../store'
+import 'antd/dist/antd.css'
+import '../styles/globals.css'
+import { AppProps } from 'next/app'
+import { useStore } from '../store'
 import { Provider } from 'mobx-react'
 
-class MyMobxApp extends App {
-  state = {
-    store: new Store(),
-  }
-
-  // Fetching serialized(JSON) store state
-  static async getInitialProps(appContext: any) {
-    const appProps = await App.getInitialProps(appContext)
-    const initialStoreState = await fetchInitialStoreState()
-
-    return {
-      ...appProps,
-      initialStoreState,
-    }
-  }
-
-  // Hydrate serialized state to store
-  static getDerivedStateFromProps(props: any, state: any) {
-    state.store.hydrate(props.initialStoreState)
-    return state
-  }
-
-  render() {
-    const { Component, pageProps } = this.props
-    return (
-      <Provider store={this.state.store}>
-        <Component {...pageProps} />
-      </Provider>
-    )
-  }
+function MyApp({ Component, pageProps }: AppProps) {
+  const store = useStore(pageProps.initialState)
+  
+  return (
+    <Provider store={store}>
+      <Component {...pageProps} />
+    </Provider>
+  )
 }
-
-export default MyMobxApp
+export default MyApp
