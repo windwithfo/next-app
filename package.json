@@ -14,7 +14,7 @@
     "mobx": "6.6.1",
     "mobx-react": "7.5.2",
     "next": "12.2.4",
-    "node-sass": "7.0.1",
+    "node-sass": "7.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
