@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css'
+import 'antd/dist/reset.css'
 import '../styles/globals.css'
 import { AppProps } from 'next/app'
 import { useStore } from '../store'
