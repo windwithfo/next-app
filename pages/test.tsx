@@ -2,6 +2,7 @@ import React from 'react'
 import { inject, observer } from 'mobx-react';
 import { Store } from '../store'
 import { Button, List } from 'antd'
+import Nav from '@/components/Nav'
 
 interface IProps {
   store: Store
@@ -23,6 +24,7 @@ class Test extends React.Component<IProps> {
   render() {
     return (
       <div className="test">
+        <Nav></Nav>
         <p>count: {this.store.count}</p>
         <Button onClick={this.add}>count++</Button>
         <List
